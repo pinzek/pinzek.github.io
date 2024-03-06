@@ -5,142 +5,369 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Portfolio</title>
+    <title>Pinzek-Ziliang Shen</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Switch</title>
+    <style>
+        .ch-content {
+            display: none;
+        }
+        
+        #language-switch-button {
+            position: fixed;
+            top: 10px; /* 调整按钮与顶部的距离 */
+            right: 10px; /* 调整按钮与右侧的距离 */
+            padding: 10px 20px;
+            background-color: #3584ec; /* Green */
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 999; /* 确保按钮在顶层 */
+        }
+    </style>
 </head>
 
+
 <body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-    </div>
-    <!-- End #mobile-menu-toggle -->
-    <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+    <!-- 英文菜单 -->
+    <div class="en-content">>
+        <div id="mobile-menu-open" class="shadow-large">
+            <i class="fa fa-bars" aria-hidden="true"></i>
         </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-            <li>
-                <a href="#education">Education</a>
-            </li>
-            <li>
-                <a href="#Research">Research</a>
-            </li>
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </header>
-    <!-- End header -->
+        <!-- End #mobile-menu-toggle -->
+        <header>
+            <div id="mobile-menu-close">
+                <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <ul id="menu" class="shadow">
+                <li>
+                    <a href="#about">About Me</a>
+                </li>
+                <li>
+                    <a href="#experience">Experience</a>
+                </li>
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+                <li>
+                    <a href="#Research">Research</a>
+                </li>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </header>
+        <!-- End header -->
 
-    <div id="lead">
-        <div id="lead-content">
-            <h1>Hello</h1>
-            <h2>I'm Ziliang Shen.It's very nice to meet you!</h2>
-            <a href="assets/resume.pdf" target="_blank" class="btn-rounded-white">Download My Resume</a>
+        <!-- 英文欢迎语和下载简历 -->
+        <div id="lead">
+            <div id="lead-content">
+                <h1>Hello！</h1>
+                <h2>I'm Ziliang Shen.It's very nice to meet you!</h2>
+                <a href="assets/resume.pdf" target="_blank" class="btn-rounded-white">Download My Resume</a>
+            </div>
+            <!-- End #lead-content -->
+    
+            <div id="lead-overlay"></div>
+    
+            <div id="lead-down">
+                <span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </span>
+            </div>
+            <!-- End #lead-down -->
         </div>
-        <!-- End #lead-content -->
+        <!-- End #lead -->
 
-        <div id="lead-overlay"></div>
 
-        <div id="lead-down">
-            <span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div>
-        <!-- End #lead-down -->
-    </div>
-    <!-- End #lead -->
-
-    <div id="about">
-        <h2 class="heading">About Me</h2>
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-4">
-                    <img class="portrait" src="assets/portrait.jpg" alt="protrait image">
+         <!-- 英文关于我 -->
+        <div id="about">
+            <h2 class="heading">About Me</h2>
+            <div class="container">
+                <div class="row">
+    
+                    <div class="col-md-4">
+                        <img class="portrait" src="assets/portrait.jpg" alt="protrait image">
+                    </div>
+                    <div class="col-md-8 vertical-center">
+                        <p>
+                            Hello, I'm currently pursuing a Ph.D. in Statistics at Shanghai University of Finance and Economics. 
+                            I am passionate about statistical and machine learning theories, particularly in high-dimensional factor models and distributed computing.  
+                            <br>
+                            Outside of academics, I lead a diverse life. 
+                            I have a strong passion for literature, art, philosophy, movies, and music.
+                            It would be a great honor to be able to communicate with you academically and in terms of interests.
+                        </p>   
+                    </div>
+    
                 </div>
-                <div class="col-md-8 vertical-center">
-                    <p>
-                        Hello, I'm currently pursuing a Ph.D. in Statistics at Shanghai University of Finance and Economics. My academic journey has been a passionate exploration of statistical and machine learning theories, with a particular fascination for factor models and distributed computing. Additionally, I have a strong affinity for quantitative finance and the medical field.
-                        <br>
-                        Outside of academics, I lead a diverse life. I'm an avid reader of philosophy books, especially drawn to structuralist philosophy. When it comes to cinema, the French New Wave holds a special place in my heart. In essence, I'm a data enthusiast with a penchant for intellectual pursuits and a cinematic connoisseur of the French Nouvelle Vague.
-                    </p>   
-                </div>
-
             </div>
         </div>
-    </div>
-    <!-- End #about -->
 
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-
-            <!-- One Experience Block -->
-            <!-- <div data-date="2021.09 - 2023.06">
-                <h3> 公司</h3>
-                <h4> 项目</h4>
-                <p>
-                    经历1 ；
-                    <br>
-                    经历2 
-                </p>
-            </div> -->
-            
-            <!-- End of One Experience Block -->
-
+         <!-- 英文工作经历 -->
+        <div id="experience" class="background-alt">
+            <h2 class="heading">Experience</h2>
+              <div id="experience-timeline">
+   
+               <!-- One Experience Block 实习与工作经历 -->
+               <!-- <div data-date="2021.09 - 2023.06">
+                   <h3> 公司</h3>
+                   <h4> 项目</h4>
+                   <p>
+                       经历1 ；
+                       <br>
+                       经历2 
+                   </p>
+               </div> -->
+               
+               <!-- End of One Experience Block -->
+   
+              </div>
         </div>
-    </div>
-    <!-- End #experience -->
+        <!-- End #experience -->
 
-    <div id="education">
-        <h2 class="heading">Education</h2>
+        <div id="education">
+            <h2 class="heading">Education</h2>
+    
+            <!-- One Education Block -->
+    
+            <div class="education-block">
+                <h3>Shanghai University of Finance and Economics</h3>
+                <span class="education-date"> In pursuing </span>
+                <h4>PhD of Mathematical Statistics</h4>
+                <p>
+    
+                </p>
+            </div>
+            <div class="education-block">
+                <h3>Nanchang University</h3>
+                <h4>Bachelor of Mathematics and Applied Mathematics (Financial Mathematics)</h4>
+                <p>
+    
+                </p>
+            </div>
+            <!-- End of One Education Block -->
+    
+        </div>
+
+        <div id="Research" class="background-alt-nth">
+            <h2 class="heading">Research</h2>
+            <ul>
+                <li style="text-align: left;">Distributed High-Dimensional Quantile Regression: Estimation Efficiency and Support Recovery (Under review for ICML 2024)
+                  <a href="#">link</a> </li>
+                <li style="text-align: left;">Functional Factor-augmented regression (In progress) <a href="#">link</a> </li>
+                <li style="text-align: left;">Distributed weighted PCA (In progress) <a href="#">link</a> </li>
+                <!-- 添加更多研究成果的列表项 -->
+            </ul>
+        </div>
+        <style>
+            #Research {
+                text-align: center;
+            }
+        
+            #Research .heading {
+                text-align: center;
+            }
+        </style>
+    
+        <!-- End #Research  -->
+    
+        <div id="skills">
+            <h2 class="heading">Skills</h2>
+            <ul>
+                <li>R</li>
+                <li>Python</li>
+                <li>MATLAB</li>
+                <li>SAS</li>
+                <li>MySQL</li>
+                <li>C</li>
+                <li>Adobe Premiere Pro</li>
+                <li>Adobe Photoshop</li>
+            </ul>
+        </div>
+        <!-- End #skills -->
+    
+        <div id="contact">
+            <h2>Contact With Me</h2>
+            <div id="contact-form">
+    
+                <!-- One Social Icon Block -->
+                <article>
+                    <i class="fa fa-envelope fa-fw"></i>
+                    <span>muxin19980125@163.com</span>
+                </article>
+                <!-- End of One Social Icon Block -->
+    
+                
+                <article>
+                    <i class="fa fa-home fa-fw"></i>
+                    <span>777 Guoding Road, Shanghai, China</span>
+                </article>
+                <!-- 
+                <article>
+                    <i class="fa fa-phone fa-fw"></i>
+                    <span>13868686868</span>
+                </article>    
+                <article>
+                     <iclass="fa fa-weixin fa-fw"></i>
+                     <span>13868686868</span>
+                </article>
+                <article>
+                    <i class="fa fa-qq fa-fw"></i>
+                    <span>78787878</span>
+                </article>
+                -->
+                
+            </div>
+            <!-- End #contact-form -->
+        </div>
+        <!-- End #contact -->
+
+    </div>
+
+    <!-- 中文菜单 -->
+    <div class="ch-content">
+        <div id="mobile-menu-open" class="shadow-large">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+        <!-- End #mobile-menu-toggle -->
+        <header>
+            <div id="mobile-menu-close">
+                <span>关闭</span> <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <ul id="menu" class="shadow">
+                <li>
+                    <a href="#about">关于我</a>
+                </li>
+                <li>
+                    <a href="#experience">实习\工作经验</a>
+                </li>
+                <li>
+                    <a href="#education">教育经历</a>
+                </li>
+                <li>
+                    <a href="#Research">研究成果</a>
+                </li>
+                <li>
+                    <a href="#skills">软件</a>
+                </li>
+                <li>
+                    <a href="#contact">联系我</a>
+                </li>
+            </ul>
+        </header>
+        <!-- End header -->
+
+        <!-- 中文欢迎语和下载简历 -->
+        <div id="lead">
+            <div id="lead-content">
+                <h1>欢迎你来到我的主页！</h1>
+                <h2>你好，我是沈梓梁，在这里见到你是我的荣幸！</h2>
+                <a href="assets/resume.pdf" target="_blank" class="btn-rounded-white">我的简历</a>
+            </div>
+            <!-- End #lead-content -->
+    
+            <div id="lead-overlay"></div>
+    
+            <div id="lead-down">
+                <span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </span>
+            </div>
+            <!-- End #lead-down -->
+        </div>
+        <!-- End #lead -->
+
+
+        <!-- 中文关于我 -->
+        <div id="about">
+            <h2 class="heading">关于我</h2>
+            <div class="container">
+                <div class="row">
+    
+                    <div class="col-md-4">
+                        <img class="portrait" src="assets/portrait.jpg" alt="protrait image">
+                    </div>
+                    <div class="col-md-8 vertical-center">
+                        <p>
+                            我现在正在上海财经大学攻读统计学博士学位的博士生。研究领域是高维因子模型和分布式计算。我对广泛的机器学习理论和高维统计理论都非常感兴趣。
+                            另外，我对量化金融和医学领域也有着浓厚的兴趣。（总是啥都有兴趣，哈哈哈）然而矛盾存在于万事万物当中，
+                            学术之旅深似海，一会儿被激情的理论带领，一会儿又被深不见底的文献笼罩。读博难，读土博难，或许我下一个研究方向就是如何用统计学解决“读博抑郁症”呢？
+                            <br>
+                            苦中作乐的是，我还对文学、艺术、哲学、电影和音乐都有着强烈的兴趣。
+                            因为我认为，一切的科学和艺术最终都是为了人服务的、讲述人的故事，这种意义上，我可以称之为一个人本主义统计学家(笑。
+                            如果能够与您在学术和兴趣上交流，那将是我苦中作乐的又一段精彩体验！
+                        </p>   
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 中文工作经历 -->
+        <div id="experience" class="background-alt">
+          <h2 class="heading">实习与工作经历</h2>
+          <div id="experience-timeline">
+  
+              <!-- One Experience Block 实习与工作经历 -->
+              <!-- <div data-date="2021.09 - 2023.06">
+                  <h3> 公司</h3>
+                  <h4> 项目</h4>
+                  <p>
+                      经历1 ；
+                      <br>
+                      经历2 
+                  </p>
+              </div> -->
+              
+              <!-- End of One Experience Block -->
+  
+          </div>
+        </div>
+      <!-- End #experience -->
+
+      <div id="education">
+        <h2 class="heading">教育经历</h2>
 
         <!-- One Education Block -->
 
         <div class="education-block">
-            <h3>Shanghai University of Finance and Economics</h3>
-            <span class="education-date">2021.09 - now</span>
-            <h4>PhD of statistics</h4>
+            <h3>上海财经大学</h3>
+            <span class="education-date">在读</span>
+            <h4>博士 数理统计学</h4>
             <p>
 
             </p>
         </div>
         <div class="education-block">
-            <h3>Nanchang University</h3>
-            <span class="education-date">2015.09 - 2019.06</span>
-            <h4>Bachelor of Mathematics and Applied Mathematics (Financial Mathematics)</h4>
+            <h3>南昌大学</h3>
+            <h4>学士 数学与应用数学（金融数学方向）</h4>
             <p>
 
             </p>
         </div>
 
         <!-- End of One Education Block -->
-
-
-    </div>
-    <!-- End #education -->
-
-    <div id="Research" class="background-alt-nth">
-        <h2 class="heading">Research</h2>
+      </div>
+      <div id="Research" class="background-alt-nth">
+        <h2 class="heading">研究成果</h2>
         <ul>
-            <li>Distributed weighted PCA(In progress)</li>
-        
+            <li style="text-align: left;">Distributed High-Dimensional Quantile Regression: Estimation Efficiency and Support Recovery (Under review for ICML 2024)
+              <a href="#">link</a> </li>
+            <li style="text-align: left;">Functional Factor-augmented regression (In progress) <a href="#">link</a> </li>
+            <li style="text-align: left;">Distributed weighted PCA (In progress) <a href="#">link</a> </li>
             <!-- 添加更多研究成果的列表项 -->
         </ul>
     </div>
@@ -157,16 +384,22 @@
     <!-- End #Research  -->
 
     <div id="skills">
-        <h2 class="heading">Skills</h2>
+        <h2 class="heading">软件</h2>
         <ul>
             <li>R</li>
             <li>Python</li>
+            <li>MATLAB</li>
+            <li>SAS</li>
+            <li>MySQL</li>
+            <li>C</li>
+            <li>Adobe Premiere Pro</li>
+            <li>Adobe Photoshop</li>
         </ul>
     </div>
     <!-- End #skills -->
 
     <div id="contact">
-        <h2>Contact With Me</h2>
+        <h2>联系我</h2>
         <div id="contact-form">
 
             <!-- One Social Icon Block -->
@@ -179,7 +412,7 @@
             
             <article>
                 <i class="fa fa-home fa-fw"></i>
-                <span>777 Guoding Road, Yangpu District, Shanghai, China</span>
+                <span>中国上海市杨浦区国定路777号</span>
             </article>
             <!-- 
             <article>
@@ -201,14 +434,20 @@
     </div>
     <!-- End #contact -->
 
+
+      
+    </div>
+
+
+
+   
+
+
+   
+
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p>
-                        Copyright &copy; <span id="current-year">2022</span> ZhuXiaoMing Portfolio
-                    </p>
-                </div>
                 <div class="col-sm-2 top">
                     <span id="to-top">
                         <i class="fa fa-chevron-up" aria-hidden="true"></i>
@@ -217,19 +456,9 @@
                 <div class="col-sm-5 social">
                     <ul>
                         <li>
-                            <a href="https://github.com/" target="_blank"><i class="fa fa-github"
+                            <a href="https://github.com/pinzek" target="_blank"><i class="fa fa-github"
                                     aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow"
-                                    aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin"
-                                    aria-hidden="true"></i></a>
-                        </li>
-
-
+                        </li>                      
                     </ul>
                 </div>
             </div>
@@ -240,6 +469,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script src="js/scripts.min.js"></script>
+
+    
+    <!-- 切换语言按钮 -->
+    <button id="language-switch-button" onclick="toggleLanguage()"> English / 中文</button>
+
+    <script>
+        function toggleLanguage() {
+            var chContent = document.querySelector('.ch-content');
+            var enContent = document.querySelector('.en-content');
+
+            // 切换中英文内容的显示和隐藏
+            if (enContent.style.display === 'none') {
+                enContent.style.display = 'block';
+                chContent.style.display = 'none';
+            } else {
+                enContent.style.display = 'none';
+                chContent.style.display = 'block';
+            }
+        }
+    </script>
 
 </body>
 
