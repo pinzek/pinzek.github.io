@@ -27,7 +27,7 @@ a,
   transition: all 300ms ease;
 }
 
-/* DESKTOP NAV */
+/* NAVIGATION */
 
 nav,
 .nav-links {
@@ -395,7 +395,8 @@ footer p {
   text-align: center;
 }
 
-/* 引用部分的样式 */
+/* QUOTE SECTION */
+
 .quote-container {
   margin-top: 20px;
   padding: 10px 20px;
