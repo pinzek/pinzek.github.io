@@ -7,6 +7,7 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
     <nav id="desktop-nav">
@@ -16,6 +17,10 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Publication</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+        </button></li>
       </ul>
     </nav>
     <nav id="hamburger-nav">
@@ -25,6 +30,12 @@
           <span></span>
           <span></span>
           <span></span>
+        </div>
+        <div class="mobile-theme-toggle">
+          <button id="mobile-theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </button>
         </div>
         <ul class="menu-links">
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
@@ -106,30 +117,56 @@
         </div>
         <div class="about-details-container">
           <div class="about-containers">
-            <div class="details-container">
-              <div>
-                <h2 class="experience-sub-title"> 
-                  <img 
-                  src="./assets/education.png" 
-                  alt="Education icon" 
-                  class="icon" 
-                  />
-                  Education Background
-                </h2>
+            <div class="details-container" style="display: flex; justify-content: space-between;">
+              <div style="width: 48%;">
+                <div>
+                  <h2 class="experience-sub-title"> 
+                    <img 
+                    src="./assets/education.png" 
+                    alt="Education icon" 
+                    class="icon" 
+                    />
+                    Education Background
+                  </h2>
+                </div>
+                <div>
+                  <h3 class="qualification__title">PhD in Statistics (in pursuing)</h3>
+                  <span class="qualification__subtitle">Shanghai University of Finance and Economics (SUFE)</span>
+                </div>
+                <div>
+                  <h3 class="qualification__title">Bachelor in Mathematics</h3>
+                  <span class="qualification__subtitle">Nanchang University (NCU)</span>
+                </div>
               </div>
-              <div>
-                <h3 class="qualification__title">Bachelor in Mathematics</h3>
-                <span class="qualification__subtitle">Nanchang University</span>
-              </div>
-              <div>
-                <h3 class="qualification__title">PhD in Statistics (in pursuing)</h3>
-                <span class="qualification__subtitle">Shanghai University of Finance and Economics</span>
+              <div style="width: 48%;">
+                <div>
+                  <h2 class="experience-sub-title"> 
+                    <img 
+                    src="./assets/skill.png" 
+                    alt="Research icon" 
+                    class="icon" 
+                    />
+                    Research Interests
+                  </h2>
+                </div>
+                <div class="interest-item">
+                  <div>
+                    <h3 class="qualification__title">Statistical Learning</h3>
+                    <span class="qualification__subtitle">High-dimensional Statistics, Robust Regression, Functional Data, Reinforcement Learning</span>
+                  </div>
+                </div>
+                <div class="interest-item">
+                  <div>
+                    <h3 class="qualification__title">Interdisciplinary Computing</h3>
+                    <span class="qualification__subtitle">Distributed Learning, Privacy Protection, Federated Learning</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="text-container">
             <p>
-              I am a Ph.D. candidate in Statistics at Shanghai University of Finance and Economics. My research passion lies at the intersection of statistical and machine learning theories, 
+              I am a Ph.D. candidate in Statistics at Shanghai University of Finance and Economics (SUFE). My research passion lies at the intersection of statistical and machine learning theories, 
               with a specific focus on <strong>Reinforcement Learning in Finance</strong>, <strong>Differential Privacy</strong>, and <strong>Distributed Statistical Inference</strong>.
             </p>
             <p>
@@ -184,6 +221,13 @@
               <article>
                 <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
+                  <h3>Janpanese</h3>
+                  <p>JLPT N2 level</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
                   <h3>Rust</h3>
                   <p>Learning !!!</p>
                 </div>
@@ -199,6 +243,12 @@
                   />
               Experience</h2>
               <!-- 添加Experience内容 -->
+               <div align="left">
+                <h3> Teacher Assistant at SUFE </h3>
+                <p> 
+                  2023.09 - now
+                </p>
+              </div> 
               <div align="left">
                 <h3> Fibonacci Capital </h3>
                 <p> 
@@ -237,45 +287,57 @@
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Publication</h1>
       <div class="experience-details-container">
-        <h4>
-          Caixing Wang, <b>Ziliang Shen*</b>, (2024). &nbsp;&nbsp;&nbsp; 
-          Distributed High-Dimensional Quantile Regression: Estimation Efficiency and Support Recovery.
-        </h4>
-        <p>
-          Accepted by ICML 2024 Spotlight. 
-          <a href="https://openreview.net/pdf?id=PDUQRBPkks">[Paper]</a> </li>
-          <a href="https://github.com/WangCaixing-96/DHSQR'">[Code]</a> </li>
-        </p>
-        <h4>
-          Hanteng Ma, <b>Ziliang Shen*</b>, Xingdong Feng, Xin Liu. &nbsp;&nbsp;&nbsp; 
-          Sparsity learning via structured functional factor augmentation.
-        </h4>
-        <p>
-          Under Review. 
-          <a href="https://arxiv.org/abs/2501.02244">[Paper]</a> </li>
-        </p>
-        <h4>
-          Caixing Wang, <b>Ziliang Shen*</b>, Shaoli Wang, Xingdong Feng. &nbsp;&nbsp;&nbsp; 
-          Estimation and Inference on Distributed High-Dimensional Quantile Regression: Double-Smoothing and Debiasing.
-        </h4>
-        <p>
-          Under Review. 
-        </p>
-        <h4>
-          <b>Ziliang Shen*</b>, Caixing Wang, Shaoli Wang, Yibo Yan. &nbsp;&nbsp;&nbsp; 
-          High-Dimensional Differentially Private Quantile Regression: Distributed Estimation and Statistical Inference.
-        </h4>
-        <p>
-          Under Review.  
-          <a href="https://arxiv.org/abs/2508.05212">[Paper]</a> </li>
-        </p>
-        <h4>
-          <b>Ziliang Shen*</b>.  &nbsp;&nbsp;&nbsp; 
-          QR-DQN Meets Conditional Value-at-Risk: Towards More Robust Distributional Reinforcement Learning.
-        </h4>
-        <p>
-          In Preperation
-        </p>
+        <div class="publication-container">
+          <div class="publication-item">
+            <h4>
+              Caixing Wang, <b>Ziliang Shen*</b> (2024)
+            </h4>
+            <h3 class="publication-title">Distributed High-Dimensional Quantile Regression: Estimation Efficiency and Support Recovery</h3>
+            <p class="publication-status">Accepted by ICML 2024 Spotlight</p>
+            <div class="publication-links">
+              <a href="https://openreview.net/pdf?id=PDUQRBPkks" class="publication-link">Paper</a>
+              <a href="https://github.com/WangCaixing-96/DHSQR'" class="publication-link">Code</a>
+            </div>
+          </div>
+          
+          <div class="publication-item">
+            <h4>
+              Hanteng Ma, <b>Ziliang Shen*</b>, Xingdong Feng, Xin Liu (2024)
+            </h4>
+            <h3 class="publication-title">Sparsity learning via structured functional factor augmentation</h3>
+            <p class="publication-status">Under Review</p>
+            <div class="publication-links">
+              <a href="https://arxiv.org/abs/2501.02244" class="publication-link">Paper</a>
+            </div>
+          </div>
+          
+          <div class="publication-item">
+            <h4>
+              Caixing Wang, <b>Ziliang Shen*</b>, Shaoli Wang, Xingdong Feng (2024)
+            </h4>
+            <h3 class="publication-title">Estimation and Inference on Distributed High-Dimensional Quantile Regression: Double-Smoothing and Debiasing</h3>
+            <p class="publication-status">Under Review</p>
+          </div>
+          
+          <div class="publication-item">
+            <h4>
+              <b>Ziliang Shen*</b>, Caixing Wang, Shaoli Wang, Yibo Yan (2025)
+            </h4>
+            <h3 class="publication-title">High-Dimensional Differentially Private Quantile Regression: Distributed Estimation and Statistical Inference</h3>
+            <p class="publication-status">Under Review</p>
+            <div class="publication-links">
+              <a href="https://arxiv.org/abs/2508.05212" class="publication-link">Paper</a>
+            </div>
+          </div>
+          
+          <div class="publication-item">
+            <h4>
+              <b>Ziliang Shen*</b> (2025)
+            </h4>
+            <h3 class="publication-title">QR-DQN Meets Conditional Value-at-Risk: Towards More Robust Distributional Reinforcement Learning</h3>
+            <p class="publication-status">In Preparation</p>
+          </div>
+        </div>
       <img
         src="./assets/arrow.png"
         alt="Arrow icon"

@@ -45,6 +45,20 @@
   .about-containers {
     margin-top: 0;
   }
+  
+  /* Publication responsive styles for tablets */
+  .publication-container {
+    gap: 1rem;
+  }
+  
+  .publication-item {
+    flex-basis: calc(50% - 0.5rem);
+  }
+  
+  /* Interest items responsive styles */
+  .interest-item {
+    padding: 0.4rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -99,5 +113,36 @@
   }
   .text-container {
     text-align: justify;
+  }
+  
+  /* Publication responsive styles */
+  .publication-container {
+    flex-direction: column;
+  }
+  
+  .publication-item {
+    flex-basis: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Interest items responsive styles */
+  .interest-item {
+    padding: 0.3rem;
+  }
+  
+  .interest-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+  }
+  
+  /* Mobile theme toggle position */
+  .mobile-theme-toggle {
+    right: 4rem;
+    top: 1.2rem;
+  }
+  
+  .theme-toggle {
+    font-size: 1.2rem;
   }
 }
