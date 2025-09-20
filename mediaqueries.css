@@ -136,13 +136,5 @@
     margin-right: 0.5rem;
   }
   
-  /* Mobile theme toggle position */
-  .mobile-theme-toggle {
-    right: 4rem;
-    top: 1.2rem;
-  }
-  
-  .theme-toggle {
-    font-size: 1.2rem;
-  }
+
 }
