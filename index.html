@@ -15,7 +15,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Publication</a></li>
+        <li><a href="#projects">Publications</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -31,7 +31,7 @@
         <ul class="menu-links">
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
           <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Publications</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </ul>
       </div>
@@ -39,16 +39,16 @@
     <section id="profile">
       <div class="section__pic-container">
         <img
-          src="./assets/profile-pic.png"
+          src="./assets/mylife.jpg"
           alt="Ziliang profile picture"
-          style="transform: scale(1.2);"
+          style="transform: scale(1.4); border-radius: 2rem; object-fit: cover;"
         />
       </div>
       
       <div class="section__text">
         
         <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Ziliang Shen(沈梓梁)</h1>
+        <h1 class="title">Ziliang Shen (沈梓梁)</h1>
         <p class="section__text__p2">It's very nice to meet you!</p>
 
         <div class="quote-container">
@@ -56,7 +56,6 @@
             "Love is the minimal unit of communism." — Alain Badiou
           </p>
         </div>
-
 
         <div class="btn-container">
           <button
@@ -78,35 +77,33 @@
         <div id="socials-container">
           <img
             src="./assets/bilibili.png"
-            alt="My bilibili profile"
+            alt="My Bilibili profile"
             class="icon"
             onclick="location.href='https://space.bilibili.com/14242958?spm_id_from=333.1007.0.0'"
           />
           <img
             src="./assets/github.png"
-            alt="My Github profile"
+            alt="My GitHub profile"
             class="icon"
             onclick="location.href='https://github.com/pinzek'"
           />
         </div>
         
       </div>
-
-
     </section>
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
       <div class="section-container">
-        <div class="section__pic-container">
+          <div class="section-container" style="margin-top: 4rem;">
           <img
             src="./assets/about-pic.png"
             alt="Profile picture"
-            style="transform: scale(0.9);"
+            style="transform: scale(1);"
             class="about-pic"
           />
         </div>
-        <div class="about-details-container">
+        <div class="about-details-container" style="margin-top: 2rem;">
           <div class="about-containers">
             <div class="details-container" style="display: flex; justify-content: space-between;">
               <div style="width: 48%;">
@@ -117,16 +114,20 @@
                     alt="Education icon" 
                     class="icon" 
                     />
-                    Education Background
+                    Education
                   </h2>
                 </div>
-                <div>
-                  <h3 class="qualification__title">PhD in Statistics (in progress)</h3>
-                  <span class="qualification__subtitle">Shanghai University of Finance and Economics (SUFE)</span>
+                <div class="interest-item" style="text-align: center;">
+                  <div>
+                    <h3 class="qualification__title">PhD in Statistics (in progress)</h3>
+                    <span class="qualification__subtitle">Shanghai University of Finance and Economics (SUFE)</span>
+                  </div>
                 </div>
+                <div class="interest-item" style="text-align: center;">
                 <div>
-                  <h3 class="qualification__title">Bachelor in Mathematics</h3>
-                  <span class="qualification__subtitle">Nanchang University (NCU)</span>
+                  <h3 class="qualification__title">&nbsp&nbsp&nbsp&nbsp&nbsp  Bachelor in Mathematics</h3>
+                  <span class="qualification__subtitle"> &nbsp&nbsp Nanchang University (NCU)</span>
+                </div>
                 </div>
               </div>
               <div style="width: 48%;">
@@ -137,16 +138,16 @@
                     alt="Research icon" 
                     class="icon" 
                     />
-                    Research Interests
+                    Research
                   </h2>
                 </div>
-                <div class="interest-item">
+                <div class="interest-item" style="text-align: center;">
                   <div>
                     <h3 class="qualification__title">Statistical Learning</h3>
                     <span class="qualification__subtitle">High-dimensional Statistics, Robust Regression, Functional Data, Reinforcement Learning</span>
                   </div>
                 </div>
-                <div class="interest-item">
+                <div class="interest-item" style="text-align: center;">
                   <div>
                     <h3 class="qualification__title">Interdisciplinary Computing</h3>
                     <span class="qualification__subtitle">Distributed Learning, Privacy Protection, Federated Learning</span>
@@ -162,7 +163,7 @@
             </p>
             <p>
               Outside of academics, I have a strong passion for literature, art, psychoanalysis, movies, and jazz music. 
-              It would be a great honor to be able to communicate with you academically and in terms of interests.
+              It would be a great honor to communicate with you academically and share common interests.
             </p>
           </div>
         </div>
@@ -174,7 +175,7 @@
         onclick="location.href='#experience'"
       />
     </section>
-    <section id="experience">
+    <section id="experience" style="padding-top: 4rem;">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Experience</h1>
       <div class="experience-details-container">
@@ -183,7 +184,7 @@
             <h2 class="experience-sub-title"> 
               <img 
                   src="./assets/skill.png" 
-                  alt="skill icon" 
+                  alt="Skill icon" 
                   class="icon" 
                   />
               Skills</h2>
@@ -206,7 +207,7 @@
                 <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
                   <h3>Scala</h3>
-                  <p>Serve as a TA for relevant courses </p>
+                  <p>Served as a TA for relevant courses</p>
                 </div>
               </article>
               <article>
@@ -220,7 +221,7 @@
                 <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
                   <h3>Rust</h3>
-                  <p>Learning !!!</p>
+                  <p>Currently learning!</p>
                 </div>
               </article>
             </div>
@@ -229,39 +230,38 @@
             <h2 class="experience-sub-title"> 
               <img 
                   src="./assets/internship.png" 
-                  alt="Education icon" 
+                  alt="Experience icon" 
                   class="icon" 
                   />
               Experience</h2>
-              <!-- 添加Experience内容 -->
-               <div align="left">
-                <h3> Teacher Assistant at SUFE </h3>
+              <div align="left">
+                <h3>Teaching Assistant at SUFE</h3>
                 <p> 
-                  2023.09 - now
+                  2023.09 - Present
                 </p>
               </div> 
               <div align="left">
-                <h3> Fibonacci Capital </h3>
+                <h3>Fibonacci Capital</h3>
                 <p> 
-                  Data Analysis &nbsp;&nbsp;&nbsp;&nbsp; 2024.04 - 2024.06
+                  Data Analyst &nbsp;&nbsp;&nbsp;&nbsp; 2024.04 - 2024.06
                 </p>
               </div> 
               <div align="left">
-                <h3> Shanghai Electric Solar Cell Target Detection Project </h3>
+                <h3>Shanghai Electric Solar Cell Target Detection Project</h3>
                 <p>
                   2024.06 - 2024.07
                 </p>
               </div>
               <div align="left">
-                <h3> Shanghai GDP Nowcasting Project </h3>
+                <h3>Shanghai GDP Nowcasting Project</h3>
                 <p>
                   2024.07 - 2024.09
                 </p>
               </div>
               <div align="left">
-                <h3> Turing Fund Management</h3>
+                <h3>Turing Fund Management</h3>
                 <p>
-                  Reinforcement Learning Quantitative Researcher &nbsp;&nbsp;&nbsp;&nbsp; 2025.03 - now
+                  Reinforcement Learning Quantitative Researcher &nbsp;&nbsp;&nbsp;&nbsp; 2025.03 - Present
                 </p>
               </div>
           </div>
@@ -276,7 +276,7 @@
     </section>
     <section id="projects">
       <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Publication</h1>
+      <h1 class="title">Publications</h1>
       <div class="experience-details-container">
         <div class="publication-container">
           <div class="publication-item">
@@ -287,7 +287,7 @@
             <p class="publication-status">Accepted by ICML 2024 Spotlight</p>
             <div class="publication-links">
               <a href="https://openreview.net/pdf?id=PDUQRBPkks" class="publication-link">Paper</a>
-              <a href="https://github.com/WangCaixing-96/DHSQR'" class="publication-link">Code</a>
+              <a href="https://github.com/WangCaixing-96/DHSQR" class="publication-link">Code</a>
             </div>
           </div>
           
@@ -329,6 +329,7 @@
             <p class="publication-status">In Preparation</p>
           </div>
         </div>
+      </div>
       <img
         src="./assets/arrow.png"
         alt="Arrow icon"
@@ -336,9 +337,10 @@
         onclick="location.href='#contact'"
       />
     </section>
+    
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Please feel free to contact me anytime</h1>
+      <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
           <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
@@ -346,13 +348,35 @@
         </div>
       </div>
     </section>
+    <section id="recommended">
+      <p class="section__text__p1">Check Out These</p>
+      <h1 class="title">Recommended Websites</h1>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 40px;">
+          <a href="https://www.marxists.org/" target="_blank" style="text-decoration: none; color: #555; background: #f8f8f8; padding: 15px 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+            <h3>Marxists Internet Archive</h3>
+            <p style="font-size: 0.9rem;">Free archive of global leftist thought</p>
+          </a>
+          <a href="https://terrytao.wordpress.com/" target="_blank" style="text-decoration: none; color: #555; background: #f8f8f8; padding: 15px 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+            <h3>Terence Tao's Blog</h3>
+            <p style="font-size: 0.9rem;">Mathematical notes and articles</p>
+          </a>
+          <a href="https://statr.me/about/" target="_blank" style="text-decoration: none; color: #555; background: #f8f8f8; padding: 15px 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+            <h3>Yixuan Qiu's Blog</h3>
+            <p style="font-size: 0.9rem;">Our academic idol Yixuan Qiu's blog</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <footer>
       <nav>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Publication</a></li>
+          <li><a href="#projects">Publications</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#recommended">Recommended</a></li>
         </ul>
       </nav>
       <p>&copy; 2024 Ziliang Shen. All Rights Reserved.</p>
