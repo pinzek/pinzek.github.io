@@ -29,8 +29,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
-
 html {
   scroll-behavior: smooth;
 }
@@ -46,8 +44,6 @@ a,
 .btn {
   transition: all 300ms ease;
 }
-
-
 
 /* ANIMATIONS */
 
@@ -186,8 +182,9 @@ a:hover {
 section {
   padding-top: 4vh;
   height: 96vh;
-  margin: 0 10rem;
+  margin: 0 10%;
   min-height: fit-content;
+  box-sizing: border-box;
 }
 
 .section-container {
@@ -212,6 +209,13 @@ section {
   height: 400px;
   width: 400px;
   margin: auto 0;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
 }
 
 .section__text {
@@ -300,8 +304,6 @@ section {
   background: rgb(0, 0, 0);
 }
 
-
-
 .btn-color-2 {
   background: none;
   color: var(--secondary-color);
@@ -345,9 +347,15 @@ section {
   flex: 1;
   background: var(--card-background);
   border-radius: 2rem;
-  border: 0.1rem solid var(--border-color);
+  border: 1px solid rgb(235, 235, 235);
   text-align: center;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.details-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 /* EXPERIENCE SECTION */
@@ -388,6 +396,33 @@ article {
 
 article .icon {
   cursor: default;
+}
+
+.experience-list {
+  text-align: left; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1rem;
+}
+
+.experience-item {
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+}
+
+.experience-item h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.experience-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.2rem;
 }
 
 /* INTEREST ITEMS */
@@ -510,15 +545,24 @@ article .icon {
   text-decoration: none;
 }
 
-
-
 /* CONTACT */
 
 #contact {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  min-height: 80vh;
+  height: auto;
+  padding-bottom: 4rem;
+}
+
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
 .contact-info-upper-container {
@@ -527,8 +571,9 @@ article .icon {
   border-radius: 2rem;
   border: 0.1rem solid var(--border-color);
   background: var(--card-background);
-  margin: 2rem auto;
+  margin: 0;
   padding: 0.5rem;
+  height: fit-content;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -550,6 +595,59 @@ article .icon {
 
 .email-icon {
   height: 2.5rem;
+}
+
+/* 摄影作品展示样式 */
+.photography-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-background);
+  border-radius: 2rem;
+  border: 0.1rem solid rgb(235, 235, 235);
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 400px;
+  width: 100%;
+}
+
+.photography-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* 新增：让链接占满容器，并显示手型 */
+.photo-link {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  overflow: hidden; /* 防止图片圆角溢出 */
+}
+
+.my-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease; /* 增加一点点透明度变化的交互 */
+}
+
+/* 鼠标悬浮在图片上时，稍微变亮或变暗提示可点击 */
+.photo-link:hover .my-photo {
+  opacity: 0.9;
+}
+
+.photo-caption {
+  margin-top: 1rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--subtitle-color);
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 500;
 }
 
 /* FOOTER SECTION */

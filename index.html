@@ -38,15 +38,15 @@
     </nav>
     <section id="profile">
       <div class="section__pic-container">
+        <!-- 修改：使用 class 控制样式，移除内联 transform -->
         <img
           src="./assets/mylife.jpg"
           alt="Ziliang profile picture"
-          style="transform: scale(1.4); border-radius: 2rem; object-fit: cover;"
+          class="profile-img"
         />
       </div>
       
       <div class="section__text">
-        
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Ziliang Shen (沈梓梁)</h1>
         <p class="section__text__p2">It's very nice to meet you!</p>
@@ -88,9 +88,9 @@
             onclick="location.href='https://github.com/pinzek'"
           />
         </div>
-        
       </div>
     </section>
+    
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
@@ -105,8 +105,11 @@
         </div>
         <div class="about-details-container" style="margin-top: 2rem;">
           <div class="about-containers">
-            <div class="details-container" style="display: flex; justify-content: space-between;">
-              <div style="width: 48%;">
+            <!-- 修改：添加 about-columns-wrapper class 和 flex-wrap -->
+            <div class="details-container about-columns-wrapper" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+              
+              <!-- 左侧 Education：添加 about-column class -->
+              <div class="about-column" style="width: 48%;">
                 <div>
                   <h2 class="experience-sub-title"> 
                     <img 
@@ -119,18 +122,21 @@
                 </div>
                 <div class="interest-item" style="text-align: center;">
                   <div>
-                    <h3 class="qualification__title">PhD in Statistics (in progress)</h3>
+                    <h3 class="qualification__title">Ph.D. in Statistics (in progress)</h3>
                     <span class="qualification__subtitle">Shanghai University of Finance and Economics (SUFE)</span>
                   </div>
                 </div>
                 <div class="interest-item" style="text-align: center;">
                 <div>
-                  <h3 class="qualification__title">&nbsp&nbsp&nbsp&nbsp&nbsp  Bachelor in Mathematics</h3>
-                  <span class="qualification__subtitle"> &nbsp&nbsp Nanchang University (NCU)</span>
+                  <!-- 修正：补全 &nbsp; 分号 -->
+                  <h3 class="qualification__title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bachelor in Mathematics</h3>
+                  <span class="qualification__subtitle"> &nbsp;&nbsp; Nanchang University (NCU)</span>
                 </div>
                 </div>
               </div>
-              <div style="width: 48%;">
+
+              <!-- 右侧 Research：添加 about-column class -->
+              <div class="about-column" style="width: 48%;">
                 <div>
                   <h2 class="experience-sub-title"> 
                     <img 
@@ -156,6 +162,7 @@
               </div>
             </div>
           </div>
+          
           <div class="text-container">
             <p>
               I am a Ph.D. candidate in Statistics at Shanghai University of Finance and Economics (SUFE). My research passion lies at the intersection of statistical and machine learning theories, 
@@ -163,7 +170,7 @@
             </p>
             <p>
               Outside of academics, I have a strong passion for literature, art, psychoanalysis, movies, and jazz music. 
-              It would be a great honor to communicate with you academically and share common interests.
+              It would be a pleasure to connect and exchange ideas with you.
             </p>
           </div>
         </div>
@@ -175,6 +182,7 @@
         onclick="location.href='#experience'"
       />
     </section>
+
     <section id="experience" style="padding-top: 4rem;">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Experience</h1>
@@ -226,44 +234,35 @@
               </article>
             </div>
           </div>
+          
+          <!-- 修改：Experience 列表重构 -->
           <div class="details-container">
             <h2 class="experience-sub-title"> 
-              <img 
-                  src="./assets/internship.png" 
-                  alt="Experience icon" 
-                  class="icon" 
-                  />
-              Experience</h2>
-              <div align="left">
+              <img src="./assets/internship.png" alt="Experience icon" class="icon" />
+              Experience
+            </h2>
+            <div class="experience-list">
+              <div class="experience-item">
                 <h3>Teaching Assistant at SUFE</h3>
-                <p> 
-                  2023.09 - Present
-                </p>
+                <p>2023.09 - Present</p>
               </div> 
-              <div align="left">
+              <div class="experience-item">
                 <h3>Fibonacci Capital</h3>
-                <p> 
-                  Data Analyst &nbsp;&nbsp;&nbsp;&nbsp; 2024.04 - 2024.06
-                </p>
+                <p>Data Analyst &nbsp;|&nbsp; 2024.04 - 2024.06</p>
               </div> 
-              <div align="left">
+              <div class="experience-item">
                 <h3>Shanghai Electric Solar Cell Target Detection Project</h3>
-                <p>
-                  2024.06 - 2024.07
-                </p>
+                <p>2024.06 - 2024.07</p>
               </div>
-              <div align="left">
+              <div class="experience-item">
                 <h3>Shanghai GDP Nowcasting Project</h3>
-                <p>
-                  2024.07 - 2024.09
-                </p>
+                <p>2024.07 - 2024.09</p>
               </div>
-              <div align="left">
+              <div class="experience-item">
                 <h3>Turing Fund Management</h3>
-                <p>
-                  Reinforcement Learning Quantitative Researcher &nbsp;&nbsp;&nbsp;&nbsp; 2025.03 - Present
-                </p>
+                <p>Reinforcement Learning Quantitative Researcher &nbsp;|&nbsp; 2025.03 - Present</p>
               </div>
+            </div>
           </div>
         </div>
       </div>
@@ -274,6 +273,7 @@
         onclick="location.href='#projects'"
       />
     </section>
+
     <section id="projects">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Publications</h1>
@@ -295,7 +295,8 @@
             <h4>
               Hanteng Ma, <b>Ziliang Shen*</b>, Xingdong Feng, Xin Liu (2024)
             </h4>
-            <h3 class="publication-title">Sparsity learning via structured functional factor augmentation</h3>
+            <!-- 修正：Title Case -->
+            <h3 class="publication-title">Sparsity Learning via Structured Functional Factor Augmentation</h3>
             <p class="publication-status">Under Review</p>
             <div class="publication-links">
               <a href="https://arxiv.org/abs/2501.02244" class="publication-link">Paper</a>
@@ -308,6 +309,9 @@
             </h4>
             <h3 class="publication-title">Estimation and Inference on Distributed High-Dimensional Quantile Regression: Double-Smoothing and Debiasing</h3>
             <p class="publication-status">Under Review</p>
+            <div class="publication-links">
+              <a href="https://wangcaixing96.com/files/DHSQR.pdf" class="publication-link">Paper</a>
+            </div>
           </div>
           
           <div class="publication-item">
@@ -341,13 +345,26 @@
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-          <p><a href="mailto:muxin19980125@163.com">muxin19980125@163.com</a></p>
+      
+      <div class="contact-wrapper">
+
+        <div class="photography-container">
+          <!-- 修改：给图片加了 mailto 链接 -->
+          <a href="mailto:muxin19980125@163.com" class="photo-link">
+            <img 
+              src="./assets/photography.jpg" 
+              alt="点击发送邮件" 
+              class="my-photo" 
+              onerror="this.src='https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'"
+            />
+          </a>
+          <!-- 修改：文字说明 -->
+          <p class="photo-caption">Pingu: Hit me with an email 
+          </p>
         </div>
       </div>
     </section>
+
     <section id="recommended">
       <p class="section__text__p1">Check Out These</p>
       <h1 class="title">Recommended Websites</h1>

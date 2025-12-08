@@ -61,14 +61,52 @@
   }
 }
 
+/* --- 手机端核心适配 --- */
 @media screen and (max-width: 600px) {
+  section {
+    margin: 0 1rem; /* 减小边距 */
+  }
+
+  /* 导航栏与 Logo */
+  nav { height: 10vh; }
+  .logo { font-size: 1.5rem; }
+
+  /* Profile 区域 */
+  #profile {
+    height: fit-content;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .section__pic-container {
+    width: 200px;
+    height: 200px; /* 固定图片大小 */
+  }
+  
+  /* About 区域强制单列 */
+  .about-columns-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  /* 覆盖内联的 width: 48% */
+  .about-column {
+    width: 100% !important; 
+  }
+  
+  /* 字体与排版调整 */
+  .title { font-size: 2rem; }
+  .section__text__p2 { font-size: 1.25rem; }
+  
+  /* Experience 列表 */
+  .experience-list {
+    text-align: center; 
+  }
+  
+  /* Contact / Footer */
   #contact,
   footer {
     height: 40vh;
-  }
-  #profile {
-    height: 83vh;
-    margin-bottom: 0;
   }
   article {
     font-size: 1rem;
@@ -92,37 +130,26 @@
   .experience-sub-title {
     font-size: 1.25rem;
   }
-  .logo {
-    font-size: 1.5rem;
-  }
   .nav-links {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
   }
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
-    justify-content: center;
-  }
   .section__text__p2 {
     font-size: 1.25rem;
-  }
-  .title {
-    font-size: 2rem;
   }
   .text-container {
     text-align: justify;
   }
   
-  /* Publication responsive styles */
+  /* Publication 列表单列 */
   .publication-container {
     flex-direction: column;
   }
   
   .publication-item {
     flex-basis: 100%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
   
   /* Interest items responsive styles */
@@ -135,6 +162,38 @@
     height: 30px;
     margin-right: 0.5rem;
   }
-  
+}
 
+@media screen and (max-width: 600px) {
+  /* ... (之前的代码) ... */
+
+  /* 针对 Contact 区域的手机端适配 */
+  #contact {
+    height: fit-content;
+    padding-bottom: 4rem;
+  }
+
+  .contact-wrapper {
+    flex-direction: column-reverse; /* 手机上让照片在上面，联系框在下面，或者保持 column */
+    gap: 2rem;
+  }
+
+  .photography-container {
+    max-width: 80%; /* 手机上图片不要太大 */
+    transform: rotate(0deg); /* 手机上取消倾斜，节省空间 */
+    margin-bottom: 2rem;
+  }
+  
+  .contact-info-upper-container {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .contact-info-container {
+     flex-wrap: wrap; /* 如果邮箱很长，允许换行 */
+  }
+  
+  .contact-info-container p {
+    font-size: 0.9rem; /* 稍微缩小邮箱字号以防溢出 */
+  }
 }
