@@ -64,7 +64,7 @@
 /* --- 手机端核心适配 --- */
 @media screen and (max-width: 600px) {
   section {
-    margin: 0 1rem; /* 减小边距 */
+    margin: 0 1rem;
   }
 
   /* 导航栏与 Logo */
@@ -81,7 +81,16 @@
   }
   .section__pic-container {
     width: 200px;
-    height: 200px; /* 固定图片大小 */
+    height: 200px;
+  }
+  
+  /* [修复] About Me 图片适配 */
+  .about-pic {
+    width: 100%;      /* 宽度撑满容器 */
+    height: auto;     /* 高度自适应保持比例 */
+    max-width: 300px; /* 限制最大宽度，防止图片过大 */
+    display: block;   /* 块级显示 */
+    margin: 0 auto 2rem; /* 居中显示并增加底部间距 */
   }
   
   /* About 区域强制单列 */
@@ -89,7 +98,6 @@
     flex-direction: column;
     gap: 1.5rem;
   }
-  /* 覆盖内联的 width: 48% */
   .about-column {
     width: 100% !important; 
   }
@@ -103,11 +111,29 @@
     text-align: center; 
   }
   
-  /* Contact / Footer */
-  #contact,
+  /* Contact / Footer 适配 */
+  #contact {
+    height: fit-content;
+    padding-bottom: 4rem;
+  }
   footer {
     height: 40vh;
   }
+  
+  /* Contact 布局调整 */
+  .contact-wrapper {
+    flex-direction: column-reverse; /* 照片在上面 */
+    gap: 2rem;
+  }
+  .photography-container {
+    max-width: 100%; /* 手机上宽度撑满 */
+    margin-bottom: 1rem;
+  }
+  .contact-info-upper-container {
+    width: 100%;
+    margin: 0;
+  }
+  
   article {
     font-size: 1rem;
   }
@@ -116,12 +142,12 @@
     margin-bottom: 2rem;
   }
   .about-containers,
-  .contact-info-upper-container,
   .btn-container {
     flex-wrap: wrap;
   }
   .contact-info-container {
     margin: 0;
+    flex-wrap: wrap; 
   }
   .contact-info-container p,
   .nav-links li a {
@@ -135,9 +161,6 @@
     gap: 0.5rem;
     text-align: center;
   }
-  .section__text__p2 {
-    font-size: 1.25rem;
-  }
   .text-container {
     text-align: justify;
   }
@@ -146,7 +169,6 @@
   .publication-container {
     flex-direction: column;
   }
-  
   .publication-item {
     flex-basis: 100%;
     margin-bottom: 1rem;
@@ -156,44 +178,9 @@
   .interest-item {
     padding: 0.3rem;
   }
-  
   .interest-icon {
     width: 30px;
     height: 30px;
     margin-right: 0.5rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  /* ... (之前的代码) ... */
-
-  /* 针对 Contact 区域的手机端适配 */
-  #contact {
-    height: fit-content;
-    padding-bottom: 4rem;
-  }
-
-  .contact-wrapper {
-    flex-direction: column-reverse; /* 手机上让照片在上面，联系框在下面，或者保持 column */
-    gap: 2rem;
-  }
-
-  .photography-container {
-    max-width: 80%; /* 手机上图片不要太大 */
-    transform: rotate(0deg); /* 手机上取消倾斜，节省空间 */
-    margin-bottom: 2rem;
-  }
-  
-  .contact-info-upper-container {
-    width: 100%;
-    margin: 0;
-  }
-  
-  .contact-info-container {
-     flex-wrap: wrap; /* 如果邮箱很长，允许换行 */
-  }
-  
-  .contact-info-container p {
-    font-size: 0.9rem; /* 稍微缩小邮箱字号以防溢出 */
   }
 }
