@@ -38,7 +38,6 @@
     </nav>
     <section id="profile">
       <div class="section__pic-container">
-        <!-- 修改：使用 class 控制样式，移除内联 transform -->
         <img
           src="./assets/mylife.jpg"
           alt="Ziliang profile picture"
@@ -105,10 +104,8 @@
         </div>
         <div class="about-details-container" style="margin-top: 2rem;">
           <div class="about-containers">
-            <!-- 修改：添加 about-columns-wrapper class 和 flex-wrap -->
             <div class="details-container about-columns-wrapper" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
               
-              <!-- 左侧 Education：添加 about-column class -->
               <div class="about-column" style="width: 48%;">
                 <div>
                   <h2 class="experience-sub-title"> 
@@ -122,20 +119,18 @@
                 </div>
                 <div class="interest-item" style="text-align: center;">
                   <div>
-                    <h3 class="qualification__title">Ph.D. in Statistics (in progress)</h3>
+                    <h3 class="qualification__title">Ph.D. Candidate in Statistics</h3>
                     <span class="qualification__subtitle">Shanghai University of Finance and Economics (SUFE)</span>
                   </div>
                 </div>
                 <div class="interest-item" style="text-align: center;">
                 <div>
-                  <!-- 修正：补全 &nbsp; 分号 -->
-                  <h3 class="qualification__title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bachelor in Mathematics</h3>
+                  <h3 class="qualification__title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B.S. in Mathematics</h3>
                   <span class="qualification__subtitle"> &nbsp;&nbsp; Nanchang University (NCU)</span>
                 </div>
                 </div>
               </div>
 
-              <!-- 右侧 Research：添加 about-column class -->
               <div class="about-column" style="width: 48%;">
                 <div>
                   <h2 class="experience-sub-title"> 
@@ -215,7 +210,7 @@
                 <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
                   <h3>Scala</h3>
-                  <p>Served as a TA for relevant courses</p>
+                  <p>Teaching Assistant for relevant courses</p>
                 </div>
               </article>
               <article>
@@ -235,7 +230,6 @@
             </div>
           </div>
           
-          <!-- 修改：Experience 列表重构 -->
           <div class="details-container">
             <h2 class="experience-sub-title"> 
               <img src="./assets/internship.png" alt="Experience icon" class="icon" />
@@ -260,7 +254,7 @@
               </div>
               <div class="experience-item">
                 <h3>Turing Fund Management</h3>
-                <p>Reinforcement Learning Quantitative Researcher &nbsp;|&nbsp; 2025.03 - Present</p>
+                <p>Reinforcement Learning Quantitative Researcher and AI Agent Developer &nbsp;&nbsp; 2025.03 - Present</p>
               </div>
             </div>
           </div>
@@ -284,7 +278,7 @@
               Caixing Wang, <b>Ziliang Shen*</b> (2024)
             </h4>
             <h3 class="publication-title">Distributed High-Dimensional Quantile Regression: Estimation Efficiency and Support Recovery</h3>
-            <p class="publication-status">Accepted by ICML 2024 Spotlight</p>
+            <p class="publication-status">Accepted to ICML 2024 (Spotlight)</p>
             <div class="publication-links">
               <a href="https://openreview.net/pdf?id=PDUQRBPkks" class="publication-link">Paper</a>
               <a href="https://github.com/WangCaixing-96/DHSQR" class="publication-link">Code</a>
@@ -295,9 +289,8 @@
             <h4>
               Hanteng Ma, <b>Ziliang Shen*</b>, Xingdong Feng, Xin Liu (2024)
             </h4>
-            <!-- 修正：Title Case -->
             <h3 class="publication-title">Sparsity Learning via Structured Functional Factor Augmentation</h3>
-            <p class="publication-status">Under Review</p>
+            <p class="publication-status">Accepted by Statistica Sinica</p>
             <div class="publication-links">
               <a href="https://arxiv.org/abs/2501.02244" class="publication-link">Paper</a>
             </div>
@@ -327,9 +320,17 @@
           
           <div class="publication-item">
             <h4>
-              <b>Ziliang Shen*</b> (2025)
+              <b>Ziliang Shen*</b>  
             </h4>
             <h3 class="publication-title">QR-DQN Meets Conditional Value-at-Risk: Towards More Robust Distributional Reinforcement Learning</h3>
+            <p class="publication-status">In Preparation</p>
+          </div>
+
+          <div class="publication-item">
+            <h4>
+              <b>Ziliang Shen*, Caixing Wang, Yibo Yan </b>
+            </h4>
+            <h3 class="publication-title">Distributed High-Dimensional Quantile Regression: A Consensus-Based Debiasing Approach with FDR Control</h3>
             <p class="publication-status">In Preparation</p>
           </div>
         </div>
@@ -347,9 +348,7 @@
       <h1 class="title">Contact Me</h1>
       
       <div class="contact-wrapper">
-
         <div class="photography-container">
-          <!-- 修改：给图片加了 mailto 链接 -->
           <a href="mailto:muxin19980125@163.com" class="photo-link">
             <img 
               src="./assets/photography.jpg" 
@@ -358,8 +357,7 @@
               onerror="this.src='https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'"
             />
           </a>
-          <!-- 修改：文字说明 -->
-          <p class="photo-caption">Pingu: Hit me with an email 
+          <p class="photo-caption">Pingu: Drop me an email! (Pic: My hometown, Jiangxi Province, China)
           </p>
         </div>
       </div>
@@ -380,12 +378,12 @@
           </a>
           <a href="https://statr.me/about/" target="_blank" style="text-decoration: none; color: #555; background: #f8f8f8; padding: 15px 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease;">
             <h3>Yixuan Qiu's Blog</h3>
-            <p style="font-size: 0.9rem;">Our academic idol Yixuan Qiu's blog</p>
+            <p style="font-size: 0.9rem;">Blog of my academic idol, Yixuan Qiu</p>
           </a>
         </div>
       </div>
     </section>
-    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=VPxJHVgIotT_H_2m12J7r0ShweF8WK9AF2ltowZZI-M&cl=ffffff&w=a"></script>
+
     <footer>
       <nav>
         <ul class="nav-links">
@@ -397,7 +395,6 @@
         </ul>
       </nav>
       
-      <!-- ClustrMaps tracker (async) -->
       <script async id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=VPxJHVgIotT_H_2m12J7r0ShweF8WK9AF2ltowZZI-M&cl=ffffff&w=a"></script>
 
       <p style="margin-top:1rem;font-size:0.9rem;color:#666;">
