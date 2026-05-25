@@ -1,6 +1,8 @@
 @media screen and (max-width: 1400px) {
   #profile {
-    height: 83vh;
+    /* 修复处：将 height 改为 min-height，允许适应缩放 */
+    min-height: 83vh;
+    height: auto;
     margin-bottom: 6rem;
   }
   .about-containers {
@@ -83,14 +85,14 @@
     width: 200px;
     height: 200px;
   }
-  
-  /* [修复] About Me 图片适配 */
+   
   .about-pic {
-    width: 100%;      /* 宽度撑满容器 */
-    height: auto;     /* 高度自适应保持比例 */
-    max-width: 300px; /* 限制最大宽度，防止图片过大 */
-    display: block;   /* 块级显示 */
-    margin: 0 auto 2rem; /* 居中显示并增加底部间距 */
+    border-radius: 2rem;
+    width: 100%;       /* 宽度填满父容器 */
+    max-width: 350px;  /* 重点：限制最大宽度！你可以根据视觉效果把 350px 改为 300px 或 400px */
+    height: auto;      /* 高度自适应，不拉伸 */
+    object-fit: cover; /* 保证图片裁切不变形 */
+    margin: auto 0;    /* 保证它在侧边居中对齐 */
   }
   
   /* About 区域强制单列 */

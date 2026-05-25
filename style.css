@@ -27,10 +27,12 @@ body {
   background-color: var(--background-color);
   color: var(--secondary-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden; /* 新增：隐藏横向溢出 */
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* 新增：彻底干掉横向滚动条 */
 }
 
 p {
@@ -179,11 +181,12 @@ a:hover {
 
 /* SECTIONS */
 
+/* 修复处：将原本的 height: 96vh 改成了 min-height 和 height: auto，允许自然撑开 */
 section {
   padding-top: 4vh;
-  height: 96vh;
+  min-height: 96vh;
+  height: auto;
   margin: 0 10%;
-  min-height: fit-content;
   box-sizing: border-box;
 }
 
@@ -197,17 +200,23 @@ section {
 
 /* PROFILE SECTION */
 
+/* 修复处：将原本的 height: 80vh 改成了 min-height 和 height: auto，并加了垂直居中 */
 #profile {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5rem;
-  height: 80vh;
+  min-height: 80vh;
+  height: auto;
 }
 
+/* 修复处：移除了固定宽高，加入最大宽度和等比缩放 */
 .section__pic-container {
   display: flex;
-  height: 400px;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  height: auto;
   margin: auto 0;
 }
 
@@ -360,16 +369,16 @@ section {
 
 /* EXPERIENCE SECTION */
 
-#experience {
-  position: relative;
-}
-
 .experience-sub-title {
   color: var(--subtitle-color);
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
   transition: color 0.3s ease;
+}
+
+#experience {
+  position: relative;
 }
 
 .experience-details-container {
@@ -618,13 +627,12 @@ article .icon {
   box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
-/* 新增：让链接占满容器，并显示手型 */
 .photo-link {
   display: block;
   width: 100%;
   cursor: pointer;
   border-radius: 1.5rem;
-  overflow: hidden; /* 防止图片圆角溢出 */
+  overflow: hidden; 
 }
 
 .my-photo {
@@ -633,10 +641,9 @@ article .icon {
   border-radius: 1.5rem;
   object-fit: cover;
   display: block;
-  transition: opacity 0.3s ease; /* 增加一点点透明度变化的交互 */
+  transition: opacity 0.3s ease; 
 }
 
-/* 鼠标悬浮在图片上时，稍微变亮或变暗提示可点击 */
 .photo-link:hover .my-photo {
   opacity: 0.9;
 }
@@ -675,4 +682,12 @@ footer p {
   font-size: 16px;
   color: #333;
   margin: 0;
+}
+
+/* 修复处：缩小带有小标题（Education/Research 等）旁边的图标大小 */
+.experience-sub-title .icon {
+  height: 1.5rem;
+  width: auto;
+  margin-right: 0.5rem;
+  vertical-align: text-bottom;
 }
