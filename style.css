@@ -9,7 +9,7 @@
   --background-color: white;
   --card-background: rgb(250, 250, 250);
   --border-color: rgb(53, 53, 53);
-  --hover-color: rgba(0, 0, 0, 0.1);
+  --hover-color: rgba(0, 0, 0, 0.05);
   --link-color: black;
   --link-hover-color: grey;
   --title-color: black;
@@ -27,12 +27,12 @@ body {
   background-color: var(--background-color);
   color: var(--secondary-color);
   transition: background-color 0.3s ease, color 0.3s ease;
-  overflow-x: hidden; /* 新增：隐藏横向溢出 */
+  overflow-x: hidden; /* 隐藏横向溢出 */
 }
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden; /* 新增：彻底干掉横向滚动条 */
+  overflow-x: hidden; /* 彻底干掉横向滚动条 */
 }
 
 p {
@@ -181,7 +181,6 @@ a:hover {
 
 /* SECTIONS */
 
-/* 修复处：将原本的 height: 96vh 改成了 min-height 和 height: auto，允许自然撑开 */
 section {
   padding-top: 4vh;
   min-height: 96vh;
@@ -193,14 +192,13 @@ section {
 .section-container {
   display: flex;
   gap: 4rem;
-  height: 80%;
+  height: auto;
   color: var(--text-color);
   transition: color 0.3s ease;
 }
 
 /* PROFILE SECTION */
 
-/* 修复处：将原本的 height: 80vh 改成了 min-height 和 height: auto，并加了垂直居中 */
 #profile {
   display: flex;
   justify-content: center;
@@ -210,7 +208,6 @@ section {
   height: auto;
 }
 
-/* 修复处：移除了固定宽高，加入最大宽度和等比缩放 */
 .section__pic-container {
   display: flex;
   width: 100%;
@@ -333,6 +330,22 @@ section {
   display: flex;
   gap: 2rem;
   margin: 2rem 0;
+  width: 100%;
+}
+
+.about-columns-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+}
+
+.about-column {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about-details-container {
@@ -370,11 +383,23 @@ section {
 /* EXPERIENCE SECTION */
 
 .experience-sub-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   color: var(--subtitle-color);
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
   transition: color 0.3s ease;
+}
+
+/* 缩小带有小标题旁边的图标大小 */
+.experience-sub-title .icon {
+  height: 1.5rem;
+  width: auto;
+  margin: 0;
+  vertical-align: text-bottom;
 }
 
 #experience {
@@ -434,39 +459,40 @@ article .icon {
     margin-top: 0.2rem;
 }
 
-/* INTEREST ITEMS */
+/* INTEREST ITEMS (修改了居中) */
 
 .interest-item {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+  flex-direction: column; /* 改为纵向排列以支持上下居中 */
+  align-items: center;    /* 改为 center，修复了之前的向左对齐问题 */
+  text-align: center;
+  width: 100%;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .interest-item:hover {
-  transform: translateX(5px);
+  transform: translateY(-5px); /* 居中后，改为向上浮动的悬停动画更自然 */
   background-color: var(--hover-color);
 }
 
-.interest-icon {
-  width: 2rem;
-  height: 2rem;
-  margin-top: 0.2rem;
-}
-
-.interest-item h3 {
+.qualification__title {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  margin-top: 0;
   color: var(--title-color);
   transition: color 0.3s ease;
 }
 
-.interest-item p {
+.qualification__subtitle {
   font-size: 0.9rem;
   color: var(--subtitle-color);
   transition: color 0.3s ease;
 }
+
 
 /* PROJECTS SECTION */
 
@@ -682,12 +708,4 @@ footer p {
   font-size: 16px;
   color: #333;
   margin: 0;
-}
-
-/* 修复处：缩小带有小标题（Education/Research 等）旁边的图标大小 */
-.experience-sub-title .icon {
-  height: 1.5rem;
-  width: auto;
-  margin-right: 0.5rem;
-  vertical-align: text-bottom;
 }
