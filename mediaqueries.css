@@ -56,6 +56,46 @@
   .contact-copy {
     max-width: 760px;
   }
+
+  .group-news {
+    grid-template-columns: 1fr;
+    gap: 1.3rem;
+  }
+
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contribution-note {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contribution-links {
+    grid-column: 2;
+  }
+
+  .guide-hero,
+  .guide-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-hero {
+    gap: 1.3rem;
+  }
+
+  .guide-layout {
+    gap: 3.5rem;
+  }
+
+  .guide-toc {
+    position: static;
+  }
+
+  .guide-toc ol {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.5rem;
+  }
 }
 
 @media (max-width: 760px) {
@@ -287,6 +327,69 @@
 
   .reading-links small {
     display: none;
+  }
+
+  .group-hero {
+    min-height: auto;
+    padding-block: 4.5rem;
+  }
+
+  .group-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .group-section-heading {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .member-card {
+    min-height: 0;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 1.1rem;
+  }
+
+  .member-media {
+    width: 88px;
+  }
+
+  .contribution-note {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1rem;
+  }
+
+  .contribution-links {
+    grid-column: 1;
+  }
+
+  .guide-hero {
+    padding-block: 4.5rem;
+  }
+
+  .guide-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .guide-heading,
+  .guide-step {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 0.65rem;
+  }
+
+  .guide-definitions > div,
+  .teaching-plan li {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .guide-toc ol {
+    grid-template-columns: 1fr;
   }
 }
 

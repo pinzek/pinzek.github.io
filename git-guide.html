@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Turing Research Group 的 Git、版本管理与 Pull Request 入门教程。"
+    />
+    <meta name="theme-color" content="#f5f3ee" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ziliang Shen" />
+    <meta property="og:title" content="Git & Pull Requests — Turing Research Group" />
+    <meta
+      property="og:description"
+      content="一份面向新成员的简明 Git 与 Pull Request 实践指南。"
+    />
+    <meta property="og:url" content="https://pinzek.github.io/git-guide.html" />
+    <meta property="og:image" content="https://pinzek.github.io/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://pinzek.github.io/git-guide.html" />
+    <title>Git &amp; Pull Requests — Turing Research Group</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body class="guide-page">
+    <a class="skip-link" href="#main-content">跳到正文</a>
+
+    <header class="site-header">
+      <nav class="site-nav shell" aria-label="主导航">
+        <a class="wordmark" href="./index.html" aria-label="Ziliang Shen, home">
+          <span class="wordmark-mark" aria-hidden="true">ZS</span>
+          <span class="wordmark-name">Ziliang Shen</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-menu"
+          aria-label="打开导航"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-list" id="primary-menu">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#projects">Research</a></li>
+          <li><a href="./group.html">Group</a></li>
+          <li><a href="./git-guide.html" aria-current="page">Git guide</a></li>
+          <li><a href="./index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="guide-hero shell" aria-labelledby="guide-title">
+        <div>
+          <p class="eyebrow">Group handbook</p>
+          <h1 id="guide-title">Git &amp; pull requests.</h1>
+        </div>
+        <p>
+          给新成员的第一份协作指南：理解版本管理，并独立完成一次分支、提交与 Pull Request。
+        </p>
+      </section>
+
+      <div class="guide-layout shell">
+        <nav class="guide-toc" aria-label="本页目录">
+          <p class="eyebrow">On this page</p>
+          <ol>
+            <li><a href="#version-control"><span>01</span>版本管理</a></li>
+            <li><a href="#install"><span>02</span>安装与配置</a></li>
+            <li><a href="#workflow"><span>03</span>第一次提交</a></li>
+            <li><a href="#pull-request"><span>04</span>Pull Request</a></li>
+            <li><a href="#commands"><span>05</span>常用命令</a></li>
+            <li><a href="#teaching"><span>06</span>带教方法</a></li>
+          </ol>
+        </nav>
+
+        <article class="guide-content">
+          <section class="guide-section" id="version-control" aria-labelledby="version-title">
+            <header class="guide-heading">
+              <span aria-hidden="true">01</span>
+              <h2 id="version-title">什么是版本管理？</h2>
+            </header>
+            <p>
+              版本管理记录文件在不同时间的状态，使我们能看清谁改了什么、为什么改，也能让多人在互不覆盖工作的情况下并行协作。
+            </p>
+            <dl class="guide-definitions">
+              <div>
+                <dt>Git</dt>
+                <dd>运行在本地电脑上的版本管理工具。它保存提交、分支和项目历史。</dd>
+              </div>
+              <div>
+                <dt>GitHub</dt>
+                <dd>托管 Git 仓库并支持讨论、审阅和合并工作的协作平台。</dd>
+              </div>
+              <div>
+                <dt>Commit</dt>
+                <dd>一次有明确目的的版本记录。它应当小、完整，并带有清楚的说明。</dd>
+              </div>
+              <div>
+                <dt>Branch</dt>
+                <dd>从主线分出的独立工作区。新任务应在新分支完成，不直接修改 main。</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="guide-section" id="install" aria-labelledby="install-title">
+            <header class="guide-heading">
+              <span aria-hidden="true">02</span>
+              <h2 id="install-title">安装与第一次配置</h2>
+            </header>
+            <p>
+              从 Git 官方页面选择 Windows、macOS 或 Linux 的安装方式。安装后打开 Terminal、PowerShell 或 Git Bash，先确认 Git 可以运行。
+            </p>
+            <a
+              class="guide-action"
+              href="https://git-scm.com/downloads/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >从 Git 官网下载 <span aria-hidden="true">↗</span></a>
+            <pre class="code-block"><code>git --version
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+git config --global init.defaultBranch main
+git config --list</code></pre>
+            <aside class="guide-note">
+              <strong>关于邮箱</strong>
+              <p>
+                提交会保存这里配置的身份信息。若不希望公开个人邮箱，请使用 GitHub 账户设置中提供的隐私邮箱。
+              </p>
+            </aside>
+          </section>
+
+          <section class="guide-section" id="workflow" aria-labelledby="workflow-title">
+            <header class="guide-heading">
+              <span aria-hidden="true">03</span>
+              <h2 id="workflow-title">完成第一次真实提交</h2>
+            </header>
+            <p>
+              练习任务只有一个：在小组成员数据中加入自己的资料。开始前，请准备 GitHub 账户，并确认已获得仓库协作者权限。
+            </p>
+            <ol class="guide-steps">
+              <li class="guide-step">
+                <span>01</span>
+                <div>
+                  <h3>下载仓库</h3>
+                  <p>Clone 会在电脑上建立一份带完整版本历史的项目副本。</p>
+                  <pre class="code-block"><code>git clone https://github.com/pinzek/pinzek.github.io.git
+cd pinzek.github.io</code></pre>
+                </div>
+              </li>
+              <li class="guide-step">
+                <span>02</span>
+                <div>
+                  <h3>建立自己的分支</h3>
+                  <p>分支名使用简短的小写英文；把 your-name 替换成自己的名字。</p>
+                  <pre class="code-block"><code>git switch -c intern/your-name
+git branch --show-current</code></pre>
+                </div>
+              </li>
+              <li class="guide-step">
+                <span>03</span>
+                <div>
+                  <h3>只修改要求的内容</h3>
+                  <p>
+                    按成员资料格式修改 <code>group-members.js</code>，保存后先查看状态和差异。
+                  </p>
+                  <pre class="code-block"><code>git status
+git diff</code></pre>
+                </div>
+              </li>
+              <li class="guide-step">
+                <span>04</span>
+                <div>
+                  <h3>提交这次改动</h3>
+                  <p>只暂存相关文件。提交信息说明做了什么，不写 update、test 等模糊词。</p>
+                  <pre class="code-block"><code>git add group-members.js
+git commit -m "Add Your Name to group page"</code></pre>
+                </div>
+              </li>
+              <li class="guide-step">
+                <span>05</span>
+                <div>
+                  <h3>推送分支</h3>
+                  <p>这会把本地分支上传到 GitHub，但不会直接改变 main。</p>
+                  <pre class="code-block"><code>git push -u origin intern/your-name</code></pre>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <section class="guide-section" id="pull-request" aria-labelledby="pr-title">
+            <header class="guide-heading">
+              <span aria-hidden="true">04</span>
+              <h2 id="pr-title">什么是 Pull Request？</h2>
+            </header>
+            <p>
+              Pull Request（PR）不是“下载请求”，而是一份把某个分支合并进主线的提案。它让团队在合并前查看差异、讨论原因、提出修改并确认结果。
+            </p>
+            <p>
+              推送后进入 GitHub，选择 <code>base: main</code> 与
+              <code>compare: intern/your-name</code>，再创建 Pull Request。标题应能独立说明改动。
+            </p>
+            <div class="pr-template">
+              <p>推荐的 PR 描述</p>
+              <pre class="code-block"><code>What changed
+- Added my profile to the group page.
+
+Checks
+- [x] Name and links are correct.
+- [x] The page opens locally.
+- [x] Only relevant files were changed.</code></pre>
+            </div>
+            <aside class="guide-note">
+              <strong>Review 不是挑错</strong>
+              <p>
+                作者负责解释改动；审阅者负责确认内容准确、范围克制、页面可用。修改意见解决后，再由维护者合并。
+              </p>
+            </aside>
+          </section>
+
+          <section class="guide-section" id="commands" aria-labelledby="commands-title">
+            <header class="guide-heading">
+              <span aria-hidden="true">05</span>
+              <h2 id="commands-title">真正需要记住的命令</h2>
+            </header>
+            <p>不必一次记住所有 Git 命令。先熟悉下面这组日常动作。</p>
+            <div class="guide-table-wrap">
+              <table class="guide-table">
+                <caption>常用 Git 命令及用途</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">命令</th>
+                    <th scope="col">用途</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>git status</td><td>确认当前分支、已修改和已暂存的文件。</td></tr>
+                  <tr><td>git diff</td><td>提交前检查尚未暂存的具体改动。</td></tr>
+                  <tr><td>git switch -c branch-name</td><td>新建分支并切换过去。</td></tr>
+                  <tr><td>git add file</td><td>选择要放入下一次提交的文件。</td></tr>
+                  <tr><td>git commit -m "message"</td><td>保存一次有说明的版本记录。</td></tr>
+                  <tr><td>git push -u origin branch-name</td><td>第一次把当前分支推送到 GitHub。</td></tr>
+                  <tr><td>git pull</td><td>把远端当前分支的新提交同步到本地。</td></tr>
+                  <tr><td>git log --oneline -5</td><td>查看最近五次提交。</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <ul class="guide-rules">
+              <li>每次操作前先运行 <code>git status</code>，确认自己在哪个分支。</li>
+              <li>不要直接向 <code>main</code> 提交或推送。</li>
+              <li>遇到冲突或 push 被拒绝时先停下，不要使用 <code>--force</code>。</li>
+              <li>未经指导不要使用 <code>reset --hard</code>，也不要删除 <code>.git</code> 文件夹。</li>
+            </ul>
+          </section>
+
+          <section class="guide-section" id="teaching" aria-labelledby="teaching-title">
+            <header class="guide-heading">
+              <span aria-hidden="true">06</span>
+              <h2 id="teaching-title">如何带实习生完成这节课</h2>
+            </header>
+            <p>
+              用一次 45 分钟的现场练习代替长时间讲授。每个人都在自己的分支完成同一个小任务，并互相审阅 PR。
+            </p>
+            <ol class="teaching-plan">
+              <li><time>0–5 min</time><p>用本仓库的历史和一条真实 diff 解释版本管理。</p></li>
+              <li><time>5–15 min</time><p>完成安装、身份配置、clone，并确认所有人都能看到项目。</p></li>
+              <li><time>15–30 min</time><p>每人建立分支、添加个人资料、检查 diff、commit 并 push。</p></li>
+              <li><time>30–40 min</time><p>创建 PR，两人互审：核对资料、链接和改动范围。</p></li>
+              <li><time>40–45 min</time><p>根据意见修改，由维护者合并；全员观察 main 的变化。</p></li>
+            </ol>
+            <aside class="guide-note">
+              <strong>完成标准</strong>
+              <p>
+                能解释 Git 与 GitHub 的区别；不直接改 main；提交范围单一；PR 描述清楚；能根据一次 review 继续修改同一分支。
+              </p>
+            </aside>
+            <div class="guide-resources" aria-label="延伸阅读">
+              <a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener noreferrer">Pro Git 中文版 ↗</a>
+              <a
+                href="https://docs.github.com/en/pull-requests/reference/pull-requests"
+                target="_blank"
+                rel="noopener noreferrer"
+              >GitHub PR 文档 ↗</a>
+              <a
+                href="https://github.com/pinzek/pinzek.github.io/blob/main/GROUP_CONTRIBUTING.md"
+                target="_blank"
+                rel="noopener noreferrer"
+              >成员资料格式 ↗</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-layout">
+        <p>© 2026 Ziliang Shen</p>
+        <p>Turing Research Group · Git handbook</p>
+        <a href="./group.html">Group <span aria-hidden="true">→</span></a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
