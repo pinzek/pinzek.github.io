@@ -74,28 +74,6 @@
     grid-column: 2;
   }
 
-  .guide-hero,
-  .guide-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .guide-hero {
-    gap: 1.3rem;
-  }
-
-  .guide-layout {
-    gap: 3.5rem;
-  }
-
-  .guide-toc {
-    position: static;
-  }
-
-  .guide-toc ol {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 1.5rem;
-  }
 }
 
 @media (max-width: 760px) {
@@ -205,10 +183,6 @@
     justify-content: space-between;
   }
 
-  .publication:hover {
-    padding-inline: 0.5rem;
-  }
-
   .group-heading {
     align-items: flex-start;
     flex-direction: column;
@@ -229,6 +203,16 @@
   }
 
   .footer-layout a {
+    justify-self: center;
+  }
+
+  .home-page .footer-layout,
+  .publications-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .footer-layout a,
+  .publications-footer a {
     justify-self: center;
   }
 }
@@ -368,29 +352,6 @@
     grid-column: 1;
   }
 
-  .guide-hero {
-    padding-block: 4.5rem;
-  }
-
-  .guide-hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .guide-heading,
-  .guide-step {
-    grid-template-columns: 32px minmax(0, 1fr);
-    gap: 0.65rem;
-  }
-
-  .guide-definitions > div,
-  .teaching-plan li {
-    grid-template-columns: 1fr;
-    gap: 0.3rem;
-  }
-
-  .guide-toc ol {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
