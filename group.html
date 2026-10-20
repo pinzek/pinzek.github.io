@@ -7,7 +7,7 @@
       name="description"
       content="Meet the interns and collaborators in Ziliang Shen's research group."
     />
-    <meta name="theme-color" content="#f5f3ee" />
+    <meta name="theme-color" content="#f5f3ed" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Ziliang Shen" />
     <meta property="og:title" content="Group — Ziliang Shen" />
@@ -20,17 +20,19 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://pinzek.github.io/group.html" />
     <title>Group — Ziliang Shen</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="./assets/fonts/cormorant-garamond-latin-300.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="stylesheet" href="editorial.css?v=20261021-3" />
   </head>
-  <body class="group-page">
+  <body class="group-page editorial-theme">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header">
       <nav class="site-nav shell" aria-label="Primary navigation">
         <a class="wordmark" href="./index.html" aria-label="Ziliang Shen, home">
-          <span class="wordmark-mark" aria-hidden="true">ZS</span>
-          <span class="wordmark-name">Ziliang Shen</span>
+          <span class="wordmark-name">Ziliang Shen<small>Research &amp; notes</small></span>
         </a>
 
         <button
@@ -48,6 +50,7 @@
         <ul class="nav-list" id="primary-menu">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./publications.html">Publications</a></li>
+          <li><a href="./index.html#notes">Notes</a></li>
           <li><a href="./group.html" aria-current="page">Group</a></li>
           <li><a href="./index.html#contact">Contact</a></li>
         </ul>
@@ -55,11 +58,16 @@
     </header>
 
     <main id="main-content">
-      <section class="group-hero shell" aria-labelledby="group-title">
+      <section class="group-hero page-hero shell" aria-labelledby="group-title">
         <div>
-          <p class="eyebrow">Research group</p>
+          <p class="hero-kicker">Research, together</p>
           <h1 id="group-title">Turing Research Group.</h1>
+          <p class="page-intro">AI, statistics, and quantitative research.<br />A shared curiosity. Different perspectives.</p>
         </div>
+        <nav class="page-index" aria-label="Group sections">
+          <a href="#latest-news-title">Latest news <span aria-hidden="true">↓</span></a>
+          <a href="#members-title">People <span aria-hidden="true">↓</span></a>
+        </nav>
       </section>
 
       <section class="group-news shell" aria-labelledby="latest-news-title">
@@ -92,7 +100,8 @@
         <header class="group-section-heading">
           <p class="section-number" aria-hidden="true">01</p>
           <div>
-            <p class="eyebrow" id="members-title">People</p>
+            <p class="eyebrow">The group</p>
+            <h2 id="members-title">People</h2>
           </div>
         </header>
 
@@ -134,6 +143,6 @@
 
     <script src="group-members.js"></script>
     <script src="group-page.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=20261019-1"></script>
   </body>
 </html>

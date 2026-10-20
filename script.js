@@ -1,6 +1,5 @@
 document.documentElement.classList.add("js");
 
-const header = document.querySelector(".site-header");
 const menuButton = document.querySelector(".menu-toggle");
 const menu = document.querySelector("#primary-menu");
 
@@ -25,7 +24,7 @@ menu?.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
+  if (event.key === "Escape" && menuButton?.getAttribute("aria-expanded") === "true") {
     setMenuState(false);
     menuButton?.focus();
   }
@@ -50,16 +49,17 @@ window.addEventListener(
   { passive: true }
 );
 
-function updateHeader() {
-  header?.classList.toggle("is-scrolled", window.scrollY > 12);
-}
-
-updateHeader();
-window.addEventListener("scroll", updateHeader, { passive: true });
-
 document.querySelectorAll("[data-contact]").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
     window.location.href = `mailto:${atob(link.dataset.contact)}`;
   });
+});
+
+// Closing on focus departure prevents an expanded menu from obscuring the page.
+document.addEventListener("focusin", (event) => {
+  if (menuButton?.getAttribute("aria-expanded") === "true" &&
+      !event.target.closest(".site-nav")) {
+    setMenuState(false);
+  }
 });

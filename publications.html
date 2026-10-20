@@ -7,7 +7,7 @@
       name="description"
       content="Publications and current research by Ziliang Shen."
     />
-    <meta name="theme-color" content="#f5f3ee" />
+    <meta name="theme-color" content="#f5f3ed" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Ziliang Shen" />
     <meta property="og:title" content="Publications — Ziliang Shen" />
@@ -20,17 +20,19 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://pinzek.github.io/publications.html" />
     <title>Publications — Ziliang Shen</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="./assets/fonts/cormorant-garamond-latin-300.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="stylesheet" href="editorial.css?v=20261021-3" />
   </head>
-  <body class="publications-page">
+  <body class="publications-page editorial-theme">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header">
       <nav class="site-nav shell" aria-label="Primary navigation">
         <a class="wordmark" href="./index.html" aria-label="Ziliang Shen, home">
-          <span class="wordmark-mark" aria-hidden="true">ZS</span>
-          <span class="wordmark-name">Ziliang Shen</span>
+          <span class="wordmark-name">Ziliang Shen<small>Research &amp; notes</small></span>
         </a>
 
         <button
@@ -56,8 +58,14 @@
     </header>
 
     <main id="main-content">
-      <section class="publications-hero shell" aria-labelledby="publications-title">
+      <section class="publications-hero page-hero shell" aria-labelledby="publications-title">
+        <p class="hero-kicker">Research archive</p>
         <h1 id="publications-title">Publications</h1>
+        <p class="page-intro">Ideas, evidence, and work in progress.</p>
+        <nav class="page-index" aria-label="Publication sections">
+          <a href="#published-title">Published &amp; accepted <span aria-hidden="true">↓</span></a>
+          <a href="#current-title">Current research <span aria-hidden="true">↓</span></a>
+        </nav>
       </section>
 
       <div class="publications-main shell">
@@ -190,6 +198,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20261019-1"></script>
   </body>
 </html>
